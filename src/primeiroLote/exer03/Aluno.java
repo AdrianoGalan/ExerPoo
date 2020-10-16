@@ -54,7 +54,7 @@ public class Aluno {
 	}
 
 	public void exibir() {
-		System.out.println("Aluno [id=" + id + ", nome=" + nome + ", ra=" + ra + ", nascimento=" + nascimento + "]");
+		System.out.println("Aluno [id=" + id + ", nome=" + nome + ", ra=" + ra + ", nascimento=" + nascimento.getDate() + "/" + nascimento.getMonth()+ "/" + nascimento.getYear() + "]");
 	}
 
 }
