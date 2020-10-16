@@ -1,5 +1,5 @@
 package primeirolote.exer02;
 
-public class Saque {
+public class Saque extends Transacao  {
 
 }
