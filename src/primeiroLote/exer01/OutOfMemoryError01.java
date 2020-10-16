@@ -1,4 +1,4 @@
-package primeiroLote;
+package primeiroLote.exer01;
 
 import java.util.ArrayList;
 
