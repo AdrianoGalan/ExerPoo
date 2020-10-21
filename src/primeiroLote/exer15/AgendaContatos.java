@@ -13,6 +13,7 @@ import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class AgendaContatos extends Application {
@@ -20,41 +21,48 @@ public class AgendaContatos extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 
-		GridPane painel = new GridPane();
+HBox painel = new HBox();
+		
 
-		Scene cena = new Scene(painel, 600, 200);
+		Scene cena = new Scene(painel, 600, 130);
+		
+		VBox vbEs = new VBox();
+		vbEs.setPadding(new Insets(15, 12, 15, 12));
+		vbEs.setSpacing(15);
+		
+		VBox vbDi = new VBox();
+		vbDi.setPadding(new Insets(15, 12, 15, 12));
+		vbDi.setSpacing(5);
+						
+		HBox hbBotao = new HBox();
+		hbBotao.setSpacing(40);
 
-		painel.add(new Label("Entre com o numero do telefone:"), 0, 0);
-		painel.add(new Label("Entre com o seu nome:"), 0, 1);
-
-		TextField tfTelefone = new TextField();
-		TextField tfNome = new TextField();
-
-		painel.add(tfTelefone, 1, 0);
-		painel.add(tfNome, 1, 1);
-
-		ColumnConstraints col1 = new ColumnConstraints();
-		col1.setPercentWidth(40);
-
-		ColumnConstraints col2 = new ColumnConstraints();
-		col2.setPercentWidth(60);
-
-		painel.getColumnConstraints().addAll(col1, col2);
-
-		HBox hb = new HBox();
-		hb.setPadding(new Insets(15, 12, 15, 12));
-		hb.setSpacing(10);
-
-		Button btOk = new Button("Ok");
+		Button btOk = new Button("OK");
 		Button btCancelar = new Button("Cancelar");
 
-		hb.getChildren().add(btOk);
-		hb.getChildren().add(btCancelar);
+		hbBotao.getChildren().add(btOk);
+		hbBotao.getChildren().add(btCancelar);
+		
+		vbEs.getChildren().add(new Label("Entre com o numero do Telefone:"));
+		vbEs.getChildren().add(new Label("Entre com o seu nome:"));
+		vbEs.getChildren().add(hbBotao);
+		
+	
+	
+		TextField tfNome = new TextField();
+		tfNome.setPrefWidth(330);
+		TextField tfTelefone = new TextField();
+		
+		vbDi.getChildren().add(tfTelefone);
+		vbDi.getChildren().add(tfNome);
+		
+				
+		painel.getChildren().add(vbEs);
+		painel.getChildren().add(vbDi);
 
-		painel.add(hb, 0, 3);
-
-		primaryStage.setTitle("Agenda de contatos");
+		primaryStage.setTitle("Ageenda Contato");
 		primaryStage.setScene(cena);
+		primaryStage.setResizable(false);
 		primaryStage.show();
 
 	}

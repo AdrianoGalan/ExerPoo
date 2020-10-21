@@ -31,11 +31,11 @@ public class CadastroContatos extends Application {
 		HBox hbBotao = new HBox();
 		hbBotao.setSpacing(5);
 
-		Button btOk = new Button("Salvar");
-		Button btCancelar = new Button("Pesquisar");
+		Button btSalvar = new Button("Salvar");
+		Button btPesquisar = new Button("Pesquisar");
 
-		hbBotao.getChildren().add(btOk);
-		hbBotao.getChildren().add(btCancelar);
+		hbBotao.getChildren().add(btSalvar);
+		hbBotao.getChildren().add(btPesquisar);
 		
 		vbEs.getChildren().add(new Label("Id:"));
 		vbEs.getChildren().add(new Label("Nome:"));
